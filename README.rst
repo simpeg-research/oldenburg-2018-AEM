@@ -1,18 +1,18 @@
-heagy_2018_AEM
-==============
+oldenburg-2018-AEM
+===================
 
-.. image:: https://travis-ci.org/simpeg-research/heagy-2018-AEM.svg?branch=master
-    :target: https://travis-ci.org/simpeg-research/heagy-2018-AEM
+.. image:: https://travis-ci.org/simpeg-research/oldenburg-2018-AEM.svg?branch=master
+    :target: https://travis-ci.org/simpeg-research/oldenburg-2018-AEM
 
 .. image:: https://mybinder.org/badge.svg
-    :target: https://mybinder.org/v2/gh/simpeg-research/heagy_2018_AEM/master
+    :target: https://mybinder.org/v2/gh/simpeg-research/oldenburg-2018-AEM/master
     
-.. image:: https://zenodo.org/badge/124603211.svg
-   :target: https://zenodo.org/badge/latestdoi/124603211
+.. image:: https://zenodo.org/badge/131676406.svg
+   :target: https://zenodo.org/badge/latestdoi/131676406
 
 
 Notebooks and python scripts to reproduce the figures shown in
-`"Open source software for simulations and inversions of airborne electromagnetic data," <https://github.com/simpeg-research/heagy_2018_AEM/blob/master/Heagy_etal_2018_aem_workshop.pdf>`_
+"3D electromagnetic modelling and inversion: A case for open-source,"
 submitted to the AEM 2018 workshop.
 
 .. image:: currents.png
@@ -20,23 +20,22 @@ submitted to the AEM 2018 workshop.
 
 **Summary**
 
-Inversions of airborne EM data are often an iterative process, not only requiring that the researcher be able to explore the impact of changing components such as the choice of regularization functional or model parameterization, but also often requiring that forward simulations be run and fields and fluxes visualized in order to build an understanding of the physical processes governing what we observe in the data. In the hope of facilitating this exploration and promoting reproducibility of geophysical simulations and inversions, we have developed the open source software package, SimPEG. The software has been designed to be modular and extensible with the goal of allowing researchers to interrogate all of the components and to facilitate the exploration of new inversion strategies. We present an overview of the software in its application to airborne EM and demonstrate its use for visualizing fields and fluxes in a forward simulation as well as its flexibility in formulating and solving the inverse problem. We invert a line of airborne TDEM data over a conductive vertical plate using a 1D voxel-inversion, a 2D voxel inversion and a parametric inversion, where all of the forward modelling is done on a 3D grid. The results in this paper can be reproduced  by using the provided Jupyter notebooks. The Python software can also be modified to allow users to experiment with parameters and explore the physics of the electromagnetics and intricacies of inversion.
+Electromagnetics has an important role to play in solving the next generation of geoscience problems. These problems are multidisciplinary, complex, and require collaboration. This is especially true at the base scientific level where the underlying physical equations need to be solved, and data, associated with physical experiments, need to be inverted. In this paper, we present arguments for adopting an open-source methodology for geophysics and provide some background about open-source software for electromagnetics. Immediate benefits are the reduced time required to carry out research, being able to collaborate, having reproducible results, and being able to disseminate results quickly. To illustrate the use of an open-source methodology in electromagnetics, we present two challenges. The first is to simulate data from a time domain airborne system over a conductive plate buried in a more resistive earth. The second is to jointly invert airborne TDEM and FDEM data with ground TDEM. SimPEG, Simulation and Parameter Estimation in Geophysics, (https://simpeg.xyz/) is used for the open-source software. The figures in this paper can be reproduced by downloading the Jupyter Notebooks we provide with this paper (https://github.com/simpeg-research/oldenburg-2018-AEM). Access to the source code allows the researcher to explore the simulations and inversions by changing model and inversion parameters, plot fields and fluxes to gain further insight about the EM phenomena, and solve a new research problem by using open-source software as a base. By providing results in a manner that allows others to reproduce, further explore, and even extend them, we hope to demonstrate that an open-source paradigm has the potential to enable more rapid progress of the geophysics community as a whole.
+
 
 **Notebooks**
 
-There are 4 notebooks in this repository:
-
-- `TEM_VerticalConductor_2D_forward.ipynb <https://github.com/simpeg-research/heagy_2018_AEM/blob/master/notebooks/TEM_VerticalConductor_2D_forward.ipynb>`_ : runs a forward simulation of an airborne electromagnetic simulation over a conductive plate. This notebook was used to generate figures 1-4 in the abstract
-- `TEM_VerticalConductor_1D_stitched_inversion.ipynb <https://github.com/simpeg-research/heagy_2018_AEM/blob/master/notebooks/TEM_VerticalConductor_1D_stitched_inversion.ipynb>`_ : Using the forward simulated data from the previous notebook, we run 1D inversions over the plate (Figure 5 in the abstract).
-- `TEM_VerticalConductor_2D_inversion_load.ipynb <https://github.com/simpeg-research/heagy_2018_AEM/blob/master/notebooks/TEM_VerticalConductor_2D_inversion_load.ipynb>`_ : This notebook loads the 2D inversion results over the plate (Figure 6 in the abstract). The 2D inversion was run using the script `2dinv_smooth.py <https://github.com/simpeg-research/heagy_2018_AEM/blob/master/notebooks/2d_inv_smooth/2dinv_smooth.py>`_.
-- `TEM_VerticalConductor_parametric_inversion_load.ipynb <https://github.com/simpeg-research/heagy_2018_AEM/blob/master/notebooks/TEM_VerticalConductor_parametric_inversion_load.ipynb>`_ : This notebook loads the 2D parametric inversion inversion results (Figure 7 in the abstract). The 2D parametric inversion was run using the script `2dinv_parametric.py <https://github.com/simpeg-research/heagy_2018_AEM/blob/master/notebooks/2d_inv_parametric/2d_inv_parametric.py>`_ .
+ - `3D_TDEM_simulation_sphere_movie.ipynb <notebooks/3D_TDEM_simulation_sphere_movie.ipynb>`_
+ - `3D_TDEM_simulation_topography_movie.ipynb <notebooks/3D_TDEM_simulation_topography_movie.ipynb>`_
+ - `Halfspace.ipynb <notebooks/Halfspace.ipynb>`_
+ - `Joint EM inversion.ipynb <notebooks/Joint%20EM%20inversion.ipynb>`_
 
 **Usage**
 
-Dependencies are specified in `requirements.txt <https://github.com/simpeg-research/heagy_2018_AEM/blob/master/requirements.txt>`_
+Dependencies are specified in `requirements.txt <https://github.com/simpeg-research/oldenburg-2018-AEM/blob/master/requirements.txt>`_
 
 .. code::
 
     pip install -r requirements.txt
 
-Please `make an issue <https://github.com/simpeg-research/heagy_2018_AEM/issues>`_ if you encounter any problems while trying to run the notebooks.
+Please `make an issue <https://github.com/simpeg-research/oldenburg-2018-AEM/issues>`_ if you encounter any problems while trying to run the notebooks.
